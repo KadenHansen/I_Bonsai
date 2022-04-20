@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './Components/Navbar';
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div>
+      <Navbar/>
       Ibonsai
     </div>
   );
