@@ -1,24 +1,21 @@
-import React, { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './Components/Navbar';
+import React, { useEffect } from 'react'
+import NavigationBar from './Components/Navbar'
 
 function App() {
-
-  useEffect(() => {
-  const callBackendAPI = async () => {
-    const response = await fetch('http://localhost:5000/');
-    const body = await response.json();
-    console.log(body)
-  };  
-  callBackendAPI()
-}, [])
+  // useEffect(() => {
+  //   const callBackendAPI = async () => {
+  //     const response = await fetch('http://localhost:5000/')
+  //     const body = await response.json()
+  //     console.log(body)
+  //   }
+  //   callBackendAPI()
+  // }, [])
 
   return (
-    <div>
-      <Navbar/>
-      Ibonsai
-    </div>
-  );
+    <>
+      <NavigationBar />
+    </>
+  )
 }
 
-export default App;
+export default App
