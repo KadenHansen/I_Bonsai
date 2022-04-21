@@ -8,17 +8,13 @@ const NavigationBar = () => {
   return (
     <Navbar bg='light' expand='lg'>
         <Container>
-    <Navbar.Brand href="#home">
       <img
         src="Images/logo.png"
-        width="100"
-        height="100"
+        width="50"
+        height="50"
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       />
-    </Navbar.Brand>
-  </Container>
-      <Container>
         <Navbar.Brand href='#home'>IbonsaI</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
