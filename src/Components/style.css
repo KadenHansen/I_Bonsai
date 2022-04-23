@@ -2,3 +2,10 @@
   /* transparent background behind text */
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+#cardwrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}

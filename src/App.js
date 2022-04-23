@@ -1,7 +1,10 @@
-import React, {} from 'react'
+import React from 'react'
 import NavigationBar from './Components/Navbar'
 import Home from './Components/Homepage'
 import { useEffect } from 'react'
+import Inventory from './Components/Inventory'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+
 function App() {
   useEffect(() => {
     const callBackendAPI = async () => {
@@ -14,8 +17,13 @@ function App() {
 
   return (
     <>
-      <NavigationBar />
-      <Home/>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/Inventory' element={<Inventory />} />
+        </Routes>
+      </Router>
     </>
   )
 }
