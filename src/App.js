@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, {} from 'react'
 import NavigationBar from './Components/Navbar'
+import Home from './Components/Homepage'
 
 function App() {
   // useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <NavigationBar />
+      <Home/>
     </>
   )
 }
