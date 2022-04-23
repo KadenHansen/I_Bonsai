@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, {} from 'react'
 import NavigationBar from './Components/Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
+import Home from './Components/Homepage'
+import { useEffect } from 'react'
 function App() {
   useEffect(() => {
     const callBackendAPI = async () => {
@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <NavigationBar />
+      <Home/>
     </>
   )
 }
