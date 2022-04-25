@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import './style.css'
 
-function Home() {
+function Carousel() {
   return (
     <Carousel className='carousel'>
       <Carousel.Item>
@@ -54,4 +54,4 @@ function Home() {
     </Carousel>
   )
 }
-export default Home
+export default Carousel
