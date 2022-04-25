@@ -1,6 +1,6 @@
 import React from 'react'
 import NavigationBar from './Components/Navbar'
-import Home from './Components/Homepage'
+import Carousel from './Components/Carousel'
 import { useEffect } from 'react'
 import Inventory from './Components/Inventory'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
@@ -20,7 +20,7 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={<Carousel />} />
           <Route path='/Inventory' element={<Inventory />} />
         </Routes>
       </Router>
