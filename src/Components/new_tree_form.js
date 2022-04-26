@@ -25,6 +25,9 @@ function NewTreeForm() {
                 Species: tree.Species,
                 Style: tree.Style,
             }),
+            headers: {
+                'content-type':'application/json'
+            },
         })
         let response = await res.json()
 
