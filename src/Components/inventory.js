@@ -1,14 +1,26 @@
 import TreeCard from './TreeCard'
-
-// this component is the inventory page
-// the data is being passed in from app.js
-// use treecard component to display the data
+import { useState, useEffect } from 'react'
+import './style.css'
 
 const Inventory = (props) => {
-  const display = props.data.map((tree, index) => {
-    return <TreeCard tree={tree} key={index} />
-  })
-  return <div>{display}</div>
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const callBackendAPI = async () => {
+      const response = await fetch('http://localhost:5000/inventory')
+      const body = await response.json()
+      setData(body)
+    }
+    callBackendAPI()
+  }, [])
+
+  return (
+    <div id='cardwrap'>
+      {data.map((tree) => (
+        <TreeCard tree={tree} />
+      ))}
+    </div>
+  )
 }
 
 export default Inventory
