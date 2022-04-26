@@ -9,7 +9,7 @@ const TreeBanner = () => {
     <Container className='my-3'>
         <Row>
           <Col className="border-end">
-            {/* Display Tree Profile here */}
+            <Profile />
           </Col>
           <Col xs={6} style={{minHeight: "100vh"}} className='border-start border-end'>
             {/* Display all tree events here */}
