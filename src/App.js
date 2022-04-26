@@ -1,5 +1,5 @@
 // dependancies
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
@@ -25,7 +25,12 @@ const App = () => {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={
+            <Fragment>
+              <SlideShow />
+              <NewTreeForm />
+            </Fragment>
+          } />
           <Route path='/Inventory' element={<Inventory />} />
         </Routes>
       </Router>

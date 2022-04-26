@@ -23,4 +23,5 @@ const Inventory = (props) => {
   )
 }
 
+
 export default Inventory
