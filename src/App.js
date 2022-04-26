@@ -1,17 +1,21 @@
+// dependancies
 import React, { Fragment } from 'react'
-import NavigationBar from './Components/Navbar'
-import SlideShow from './Components/Carousel'
-import Inventory from './Components/inventory'
-import { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
-import NewTreeForm from './Components/new_tree_form'
+import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-function App() {
+// component imports
+import NavigationBar from './Components/Navbar'
+import Home from './Components/Homepage'
+import Inventory from './Components/inventory'
+
+const App = () => {
+  const [data, setData] = useState([])
+
   useEffect(() => {
     const callBackendAPI = async () => {
       const response = await fetch('http://localhost:5000/')
       const body = await response.json()
-      console.log(body)
+      setData(body)
     }
     callBackendAPI()
   }, [])
