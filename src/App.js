@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 // component imports
 import NavigationBar from './Components/Navbar'
-import Home from './Components/Homepage'
+import SlideShow from './Components/Carousel'
 import Inventory from './Components/inventory'
+import NewTreeForm from './Components/new_tree_form'
 
 const App = () => {
   const [data, setData] = useState([])
