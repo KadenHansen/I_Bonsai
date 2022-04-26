@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import NavigationBar from './Components/Navbar'
 import SlideShow from './Components/Carousel'
-import Inventory from './Components/Inventory'
+import Inventory from './Components/inventory'
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import NewTreeForm from './Components/new_tree_form'
 
 function App() {
   useEffect(() => {
@@ -20,7 +21,12 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route exact path='/' element={<SlideShow />} />
+          <Route exact path='/' element={
+            <Fragment>
+              <SlideShow />
+              <NewTreeForm />
+            </Fragment>
+          } />
           <Route path='/Inventory' element={<Inventory />} />
         </Routes>
       </Router>
