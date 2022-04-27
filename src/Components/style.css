@@ -8,4 +8,23 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
+  padding-bottom: 20px;
+}
+
+#btncolor {
+  /* green */
+  background-color: #286f2b;
+  border-color: #286f2b;
+}
+
+.carousel .carousel-item {
+  height: 92vh;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 92vh;
 }
