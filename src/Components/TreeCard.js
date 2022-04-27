@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 
 const TreeCard = (props) => {
   // make the button link to the TreeView page
-  const link = `inventory/${props.tree._id}`
+  const link = `${props.tree._id}`
+  const treeID = props.tree._id
 
   return (
     <div id='cardwrap'>
@@ -26,10 +27,11 @@ const TreeCard = (props) => {
           <Card.Subtitle className='mb-2 text-muted'>
             Style {props.tree.Style}
           </Card.Subtitle>
-          {/* button that links to tree view */}
-          <Button id='btncolor' variant='primary' href={link}>
-            View Tree
-          </Button>
+          {/* button that links to tree view, routes to display tree view component */}
+          {/* setup routes to render TreeView component  */}
+          <Link to={link}>
+            <Button variant='primary'>View Tree</Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>

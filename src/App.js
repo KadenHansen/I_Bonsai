@@ -5,6 +5,7 @@ import Inventory from './Components/inventory'
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import NewTreeForm from './Components/new_tree_form'
+import TreeView from './Components/TreeView/TreeView'
 
 function App() {
   useEffect(() => {
@@ -21,13 +22,18 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route exact path='/' element={
-            <Fragment>
-              <SlideShow />
-              <NewTreeForm />
-            </Fragment>
-          } />
+          <Route
+            exact
+            path='/'
+            element={
+              <Fragment>
+                <SlideShow />
+                <NewTreeForm />
+              </Fragment>
+            }
+          />
           <Route path='/Inventory' element={<Inventory />} />
+          <Route path='/inventory/:treeId' element={<TreeView />} />
         </Routes>
       </Router>
     </>
