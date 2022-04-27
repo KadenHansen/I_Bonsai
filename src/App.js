@@ -8,6 +8,7 @@ import NavigationBar from './Components/Navbar'
 import SlideShow from './Components/Carousel'
 import Inventory from './Components/inventory'
 import NewTreeForm from './Components/new_tree_form'
+import TreeView from './Components/TreeView/TreeView'
 
 const App = () => {
   const [data, setData] = useState([])
@@ -26,13 +27,18 @@ const App = () => {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route exact path='/' element={
-            <Fragment>
-              <SlideShow />
-              <NewTreeForm />
-            </Fragment>
-          } />
-          <Route path='/Inventory' element={<Inventory />} />
+          <Route
+            exact
+            path='/'
+            element={
+              <Fragment>
+                <SlideShow />
+                <NewTreeForm />
+              </Fragment>
+            }
+          />
+          <Route path='/inventory' element={<Inventory />} />
+          <Route path='/inventory/:treeId' element={<TreeView />} />
         </Routes>
       </Router>
     </>

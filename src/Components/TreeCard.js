@@ -1,30 +1,37 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import './style.css'
-import { useState } from 'react'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 
 const TreeCard = (props) => {
-  // consol.log the data for each card
-  console.log(props.tree)
+  // make the button link to the TreeView page
+  const link = `${props.tree._id}`
+  const treeID = props.tree._id
 
   return (
     <div id='cardwrap'>
       <Card style={{ width: '18rem' }}>
         <Card.Img
           variant='top'
-          src='https://www.thespruce.com/thmb/0AJv8AfVaT09o4oLhofX_WR_d-Y=/3024x3022/filters:no_upscale():max_bytes(150000):strip_icc()/Bonsai-Juniper-Tree_GettyImages-1191078639-c86fffdd513648b6b2ee0d658710bc7d.jpg'
+          src='https://source.unsplash.com/random/900×700/?tree'
         />
         <Card.Body>
-          {/* Replace Tree Name with db tree.name */}
           <Card.Title>{props.tree.Name}</Card.Title>
-          {/* Replace Species with db tree.name */}
           <Card.Subtitle className='mb-2 text-muted'>
-            {props.tree.Species}
+            Species: {props.tree.Species}
           </Card.Subtitle>
-          {/* Replace Owner's Username with db owner.username */}
-          <Card.Subtitle className='text-muted'>
-            {props.tree.Style}
+          <Card.Subtitle className='mb-2 text-muted'>
+            {props.tree.Age} years old
           </Card.Subtitle>
+          <Card.Subtitle className='mb-2 text-muted'>
+            Style {props.tree.Style}
+          </Card.Subtitle>
+          {/* button that links to tree view, routes to display tree view component */}
+          {/* setup routes to render TreeView component  */}
+          <Link to={link}>
+            <Button variant='primary'>View Tree</Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>
