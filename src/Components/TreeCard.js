@@ -2,11 +2,11 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './style.css'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 
 const TreeCard = (props) => {
   // make the button link to the TreeView page
-  const link = `/${props.tree._id}`
-  console.log(props.tree._id)
+  const link = `inventory/${props.tree._id}`
 
   return (
     <div id='cardwrap'>

@@ -17,11 +17,10 @@ const Inventory = (props) => {
   return (
     <div id='cardwrap'>
       {data.map((tree) => (
-        <TreeCard tree={tree} />
+        <TreeCard key={tree._id} tree={tree} />
       ))}
     </div>
   )
 }
-
 
 export default Inventory
