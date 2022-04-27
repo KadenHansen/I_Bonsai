@@ -1,18 +1,23 @@
+// dependancies
 import React, { Fragment } from 'react'
+import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+// component imports
 import NavigationBar from './Components/Navbar'
 import SlideShow from './Components/Carousel'
 import Inventory from './Components/inventory'
-import { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import NewTreeForm from './Components/new_tree_form'
 import TreeView from './Components/TreeView/TreeView'
 
-function App() {
+const App = () => {
+  const [data, setData] = useState([])
+
   useEffect(() => {
     const callBackendAPI = async () => {
       const response = await fetch('http://localhost:5000/')
       const body = await response.json()
-      console.log(body)
+      setData(body)
     }
     callBackendAPI()
   }, [])
@@ -32,7 +37,7 @@ function App() {
               </Fragment>
             }
           />
-          <Route path='/Inventory' element={<Inventory />} />
+          <Route path='/inventory' element={<Inventory />} />
           <Route path='/inventory/:treeId' element={<TreeView />} />
         </Routes>
       </Router>
