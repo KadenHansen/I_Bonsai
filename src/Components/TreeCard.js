@@ -9,13 +9,16 @@ const TreeCard = (props) => {
   const link = `${props.tree._id}`
   const treeID = props.tree._id
 
+  let image = `https://source.unsplash.com/random/900×700/?tree`
+
+  if (props.tree.Image) {
+    image = props.tree.Image
+  }
+
   return (
     <div id='cardwrap'>
       <Card style={{ width: '18rem' }}>
-        <Card.Img
-          variant='top'
-          src='https://source.unsplash.com/random/900×700/?tree'
-        />
+        <Card.Img variant='top' src={image} />
         <Card.Body>
           <Card.Title>{props.tree.Name}</Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
