@@ -8,6 +8,7 @@ import NavigationBar from './Components/Navbar'
 import SlideShow from './Components/Carousel'
 import Inventory from './Components/inventory'
 import NewTreeForm from './Components/new_tree_form'
+import EditTreeForm from './Components/EditTreeForm'
 import TreeView from './Components/TreeView/TreeView'
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
           />
           <Route path='/inventory' element={<Inventory />} />
           <Route path='/inventory/:treeId' element={<TreeView />} />
+          <Route path='/inventory/:treeId/edit' element={<EditTreeForm />} />
         </Routes>
       </Router>
     </>
