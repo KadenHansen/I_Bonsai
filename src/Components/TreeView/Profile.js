@@ -1,9 +1,10 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+import { Link } from 'react-router-dom'
 
 const Profile = (props) => {
-  const link = `${props.data._id}/edit`
+  const link = `edit`
   return (
     <Container>
       <img
