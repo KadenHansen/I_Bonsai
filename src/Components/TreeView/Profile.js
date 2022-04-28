@@ -1,7 +1,9 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
 const Profile = (props) => {
+  const link = `${props.data._id}/edit`
   return (
     <Container>
       <img
@@ -12,6 +14,10 @@ const Profile = (props) => {
       />
       <div className='font-weight-bold'>{props.data.Name}</div>
       <div className='text-black-50'>{props.data.Species}</div>
+      <Link to={link}>
+        <Button variant='primary'>Edit Tree</Button>
+      </Link>
+      <Button variant='danger'>Delete Tree</Button>
     </Container>
   )
 }

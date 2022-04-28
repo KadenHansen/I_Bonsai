@@ -1,7 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import './style.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 // make the tree view button link to the tree view page
 
