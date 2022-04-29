@@ -15,7 +15,7 @@ const Inventory = (props) => {
   }, [])
 
   return (
-    <div id='cardwrap'>
+    <div id='cardwrap' className='my-5'>
       {data.map((tree) => (
         <TreeCard key={tree._id} tree={tree} />
       ))}

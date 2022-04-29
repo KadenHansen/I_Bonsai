@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -16,7 +16,6 @@ function EditTreeForm() {
         }
         callBackendAPI()
     }, [])
-    // console.log("data", data)
     
     const handleChange = e => {
         const { name, value } = e.target;
@@ -28,7 +27,6 @@ function EditTreeForm() {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(tree);
         const res = await fetch(`http://localhost:5000/inventory/${treeId}/edit`, {
             method: "PATCH",
             body: JSON.stringify({
@@ -42,11 +40,18 @@ function EditTreeForm() {
                 'content-type':'application/json'
             },
         })
-        let response = await res.json().then(view => {
+        await res.json().then(view => {
                 window.location.href = view.redirect
             })
         
     }
+
+    async function deleteTree(treeId) {
+        await fetch(`http://localhost:5000/Inventory/${treeId}/delete`, {
+          method: "DELETE"
+        })
+      }
+    
     
     return (
         <div>
@@ -110,8 +115,11 @@ function EditTreeForm() {
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Edit
                 </Button>
+                <Link to='/Inventory'>
+                    <Button variant='danger' onClick={()=>{deleteTree(data._id)}}>Delete Tree</Button>
+                </Link>
             </Form>
         </div>
     )
