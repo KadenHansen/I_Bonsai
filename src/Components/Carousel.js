@@ -16,12 +16,8 @@ function SlideShow() {
         <Carousel.Caption>
           <h3 className='textbackground center'>Welcome To IbonsaI</h3>
           <p className='textbackground center'>
-            This app is used to keep track of your bonsai tree inventory by
-            Displaying a quick view of all of your current bonsai trees and
-            their individual current status Allowing you to add events to each
-            individual tree to update their current status Giving you the tips
-            and tricks you need to be successful with a species overview,
-            accessible from the quick tree view
+            Keep track of your bonsai tree inventory using a quick view of all of your current bonsai trees!
+            Also track their individual current status using each tree's individual page!
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -33,9 +29,9 @@ function SlideShow() {
         />
 
         <Carousel.Caption>
-          <h3 className='textbackground'>Second slide label</h3>
+          <h3 className='textbackground'>First Time Here?</h3>
           <p className='textbackground'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Get started by clicking the "Add a Tree" button in the Navigation Bar at the top!
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -47,9 +43,9 @@ function SlideShow() {
         />
 
         <Carousel.Caption>
-          <h3 className='textbackground'>Third slide label</h3>
+          <h3 className='textbackground'>Already Started?</h3>
           <p className='textbackground'>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Click the "Inventory" button in the Navigation Bar at the top to see your trees.
           </p>
         </Carousel.Caption>
       </Carousel.Item>

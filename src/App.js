@@ -40,7 +40,7 @@ const App = () => {
           />
           <Route path='/inventory' element={<Inventory />} />
           <Route path='/inventory/:treeId' element={<TreeView />} />
-          <Route path='/inventory/:treeId/edit' element={<EditTreeForm />} />
+          <Route path='/inventory/new' element={<NewTreeForm />} />
         </Routes>
       </Router>
     </>

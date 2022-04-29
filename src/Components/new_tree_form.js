@@ -22,7 +22,7 @@ function NewTreeForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(tree)
+    // console.log(tree)
     const res = await fetch('http://localhost:5000/inventory', {
       method: 'POST',
       body: JSON.stringify({
@@ -36,8 +36,11 @@ function NewTreeForm() {
         'content-type': 'application/json',
       },
     })
-    let response = await res.json()
+    await res.json().then(view => {
+      window.location.href = view.redirect
+  })
   }
+
   return (
     <div>
       <Form action='/' method='POST' onSubmit={handleSubmit}>
