@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container'
 import { Link } from 'react-router-dom'
 
 const Profile = (props) => {
-  const link = `edit`
   return (
     <Container>
       <img
@@ -15,7 +14,7 @@ const Profile = (props) => {
       />
       <div className='font-weight-bold'>{props.data.Name}</div>
       <div className='text-black-50'>{props.data.Species}</div>
-      <Link to={link}>
+      <Link to='edit'>
         <Button variant='primary'>Edit Tree</Button>
       </Link>
       <Button variant='danger'>Delete Tree</Button>
