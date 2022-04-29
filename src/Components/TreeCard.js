@@ -17,26 +17,23 @@ const TreeCard = (props) => {
 
   return (
     <div id='cardwrap'>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant='top' src={image} />
-        <Card.Body>
-          <Card.Title>{props.tree.Name}</Card.Title>
-          <Card.Subtitle className='mb-2 text-muted'>
-            Species: {props.tree.Species}
-          </Card.Subtitle>
-          <Card.Subtitle className='mb-2 text-muted'>
-            {props.tree.Age} years old
-          </Card.Subtitle>
-          <Card.Subtitle className='mb-2 text-muted'>
-            Style {props.tree.Style}
-          </Card.Subtitle>
-          {/* button that links to tree view, routes to display tree view component */}
-          {/* setup routes to render TreeView component  */}
-          <Link to={link}>
-            <Button variant='primary'>View Tree</Button>
-          </Link>
-        </Card.Body>
-      </Card>
+      <Link to={link} style={{ textDecoration: 'none', boxShadow: '3px 3px 10px #3d3d3d' }}>
+        <Card style={{ width: '18rem', height: '100%' }}>
+          <Card.Img variant='top' src={image} className='card-image-top' />
+          <Card.Body>
+            <Card.Title>{props.tree.Name}</Card.Title>
+            <Card.Subtitle className='mb-2 text-muted'>
+              Species: {props.tree.Species}
+            </Card.Subtitle>
+            <Card.Subtitle className='mb-2 text-muted'>
+              {props.tree.Age} years old
+            </Card.Subtitle>
+            <Card.Subtitle className='mb-2 text-muted'>
+              Style {props.tree.Style}
+            </Card.Subtitle>
+          </Card.Body>
+        </Card>
+      </Link>
     </div>
   )
 }
