@@ -36,6 +36,7 @@ function EditTreeForm() {
                 Age: data.Age,
                 Species: data.Species,
                 Style: data.Style,
+                Image: data.Image,
             }),
             headers: {
                 'content-type':'application/json'
@@ -54,7 +55,6 @@ function EditTreeForm() {
                 <Form.Group className="mb-3" controlId="Name">
                     <Form.Label>Bonsai Name</Form.Label>
                     <Form.Control
-                        // value={data.Name}
                         defaultValue={data.Name}
                         type="text"
                         placeholder={data.Name}
@@ -69,7 +69,6 @@ function EditTreeForm() {
                 <Form.Group className="mb-3" controlId="Species">
                     <Form.Label>Species</Form.Label>
                     <Form.Control
-                        // value={data.Species}
                         defaultValue={data.Species}
                         type="text"
                         placeholder={data.Species}
@@ -81,7 +80,6 @@ function EditTreeForm() {
                 <Form.Group className="mb-3" controlId="Age">
                     <Form.Label>Age</Form.Label>
                     <Form.Control
-                        // value={data.Age}
                         defaultValue={data.Age}
                         type="Number"
                         placeholder={data.Age}
@@ -93,12 +91,22 @@ function EditTreeForm() {
                 <Form.Group className="mb-3" controlId="Style">
                     <Form.Label>Style</Form.Label>
                     <Form.Control
-                        // value={data.Style}
                         defaultValue={data.Style}
                         type="text"
                         placeholder={data.Style}
                         onChange={handleChange}
                         name="Style"
+                    />
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="Style">
+                    <Form.Label>Image URL</Form.Label>
+                    <Form.Control
+                        defaultValue={data.Image}
+                        type="text"
+                        placeholder={data.Image}
+                        onChange={handleChange}
+                        name="Image"
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">
