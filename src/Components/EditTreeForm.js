@@ -17,7 +17,7 @@ function EditTreeForm() {
         callBackendAPI()
     }, [])
     // console.log("data", data)
-
+    
     const handleChange = e => {
         const { name, value } = e.target;
         setData(prevState => ({
@@ -25,7 +25,7 @@ function EditTreeForm() {
             [name]: value
         }))
     }
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log(tree);
@@ -41,10 +41,12 @@ function EditTreeForm() {
                 'content-type':'application/json'
             },
         })
-        let response = await res.json()
-
+        let response = await res.json().then(view => {
+                window.location.href = view.redirect
+            })
+        
     }
-
+    
     return (
         <div>
 
