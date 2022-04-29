@@ -1,10 +1,20 @@
-import React from 'react'
+import { React, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { Link } from 'react-router-dom'
 
 const Profile = (props) => {
   const link = `edit`
+  const btnDel = `/Inventory`
+  async function deleteTree(treeId) {
+    await fetch(`http://localhost:5000/Inventory/${treeId}/delete`, {
+      method: "DELETE"
+    });
+  
+    // const newRecords = records.filter((el) => el._id !== id);
+    // setRecords(newRecords);
+  }
+
   return (
     <Container>
       <img
@@ -18,7 +28,13 @@ const Profile = (props) => {
       <Link to={link}>
         <Button variant='primary'>Edit Tree</Button>
       </Link>
-      <Button variant='danger'>Delete Tree</Button>
+      <Link to={btnDel}>
+      <Button variant='danger' onClick={()=>{
+        deleteTree(props.data._id)
+      }}>Delete Tree
+      </Button>
+      </Link>
+
     </Container>
   )
 }
