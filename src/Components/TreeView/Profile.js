@@ -1,6 +1,6 @@
-import { React, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+import {Link} from 'react-router-dom'
 
 const Profile = (props) => {
   const link = `edit`
@@ -9,9 +9,6 @@ const Profile = (props) => {
     await fetch(`http://localhost:5000/Inventory/${treeId}/delete`, {
       method: "DELETE"
     });
-  
-    // const newRecords = records.filter((el) => el._id !== id);
-    // setRecords(newRecords);
   }
 
   return (

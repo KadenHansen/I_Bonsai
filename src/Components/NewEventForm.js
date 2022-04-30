@@ -4,19 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 function NewEventForm() {
-    // const [name, setName] = useState("");
-
     return (
         <div>
-            {/* <form>
-                <label>Enter your bonsai name:
-                    <input
-                        type='text'
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </label>
-            </form> */}
             <Form>
                 <Form>
                     {['checkbox'].map((type) => (
@@ -56,10 +45,6 @@ function NewEventForm() {
                     <Form.Control type="date" placeholder="select potting date" />
                 </Form.Group>
 
-                {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Image</Form.Label>
-                    <Form.Control type="text" placeholder="upload photo" />
-                </Form.Group> */}
                 <Form.Group controlId="formFileSm" className="mb-3">
                     <Form.Label>Upload Image</Form.Label>
                     <Form.Control type="file" size="sm" />
