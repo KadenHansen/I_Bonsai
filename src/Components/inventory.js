@@ -7,7 +7,7 @@ const Inventory = (props) => {
 
   useEffect(() => {
     const callBackendAPI = async () => {
-      const response = await fetch('http://localhost:5000/inventory')
+      const response = await fetch('https://i-bonsai-server.herokuapp.com/inventory')
       const body = await response.json()
       setData(body)
     }

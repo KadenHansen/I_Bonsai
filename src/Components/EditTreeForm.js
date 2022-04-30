@@ -10,7 +10,7 @@ function EditTreeForm() {
     
     useEffect(() => {
             const callBackendAPI = async () => {
-            const response = await fetch(`http://localhost:5000/inventory/${treeId}`)
+            const response = await fetch(`https://i-bonsai-server.herokuapp.com/inventory/${treeId}`)
             const body = await response.json()
             setData(body)
         }
@@ -27,7 +27,7 @@ function EditTreeForm() {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch(`http://localhost:5000/inventory/${treeId}/edit`, {
+        const res = await fetch(`https://i-bonsai-server.herokuapp.com/inventory/${treeId}/edit`, {
             method: "PATCH",
             body: JSON.stringify({
                 Name: data.Name,
@@ -47,7 +47,7 @@ function EditTreeForm() {
     }
 
     async function deleteTree(treeId) {
-        await fetch(`http://localhost:5000/Inventory/${treeId}/delete`, {
+        await fetch(`https://i-bonsai-server.herokuapp.com/Inventory/${treeId}/delete`, {
           method: "DELETE"
         })
       }
