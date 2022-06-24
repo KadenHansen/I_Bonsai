@@ -23,7 +23,7 @@ function NewTreeForm() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     // console.log(tree)
-    const res = await fetch('http://localhost:5000/inventory', {
+    const res = await fetch('https://i-bonsai-server.herokuapp.com/inventory', {
       method: 'POST',
       body: JSON.stringify({
         Name: tree.Name,
@@ -34,6 +34,7 @@ function NewTreeForm() {
       }),
       headers: {
         'content-type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
     })
     await res.json().then(view => {
