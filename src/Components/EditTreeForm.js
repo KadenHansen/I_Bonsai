@@ -27,7 +27,7 @@ function EditTreeForm() {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch(`https://i-bonsai-server.herokuapp.com/inventory/${treeId}/edit`, {
+        const res = await fetch(`https://i-bonsai-server.herokuapp.com/${treeId}/edit`, {
             method: "PATCH",
             body: JSON.stringify({
                 Name: data.Name,
@@ -47,7 +47,7 @@ function EditTreeForm() {
     }
 
     async function deleteTree(treeId) {
-        await fetch(`https://i-bonsai-server.herokuapp.com/Inventory/${treeId}/delete`, {
+        await fetch(`https://i-bonsai-server.herokuapp.com/${treeId}/delete`, {
           method: "DELETE"
         })
       }

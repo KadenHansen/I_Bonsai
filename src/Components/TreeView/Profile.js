@@ -6,7 +6,7 @@ const Profile = (props) => {
   const link = `edit`
   const btnDel = `/Inventory`
   async function deleteTree(treeId) {
-    await fetch(`http://localhost:5000/Inventory/${treeId}/delete`, {
+    await fetch(`https://i-bonsai-server.herokuapp.com/${treeId}/delete`, {
       method: "DELETE"
     });
   }
